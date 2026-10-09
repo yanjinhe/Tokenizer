@@ -209,6 +209,28 @@ the corresponding R²:
 `python scripts/plot_performance.py --paper --out figure2.png` redraws Figure 2
 from these tables (the translation panels go to `figure2_translation.png`).
 
+### Case study (Figure 3)
+
+<p align="center">
+  <img src="assets/figure3_case_study.png" alt="Figure 3: tokenization of a SMILES string and of the phrase 'invisible footprints' with small, appropriate and large vocabularies" width="620">
+</p>
+
+With an appropriate vocabulary size the tokenization is not only more
+effective but also captures the essential patterns of the sequences. A
+vocabulary that is too small fragments the molecule
+`CCCOc1ccc(cc1)c2cccc3c2nccn3` into pieces that break chemical substructures
+and splits "invisible footprints" into non-semantic units (`vis`, `ible`,
+`prin`, `ts`); a vocabulary that is too large over-merges across distinct
+substructures (`c2cccc3c2n`) and turns whole words into single tokens. The
+segmentations of your own tokenizers can be printed with
+
+```bash
+python scripts/case_study.py --base_tokenizer outputs/smiles/tokenizers/bpe_max \
+    --vocab_sizes 500,3000,8000 --text "CCCOc1ccc(cc1)c2cccc3c2nccn3"
+python scripts/case_study.py --base_tokenizer outputs/text/tokenizers/bpe_max \
+    --vocab_sizes 5000,30000,50000 --text "invisible footprints"
+```
+
 ## Citation
 
 ```bibtex
