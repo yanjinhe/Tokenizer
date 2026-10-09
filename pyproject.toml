@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zipftok"
+version = "1.0.0"
+description = "Zipf-guided vocabulary size selection for BPE tokenizers (He, Zeng and Jiang, EMNLP 2025)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Yanjin He"}, {name = "Qingkai Zeng"}, {name = "Meng Jiang"}]
+requires-python = ">=3.8"
+dependencies = ["numpy>=1.22", "scipy>=1.8", "scikit-learn>=1.1", "pandas>=1.4", "matplotlib>=3.5"]
+
+[project.optional-dependencies]
+tokenizers = ["tokenizers>=0.15"]
+all = [
+    "tokenizers>=0.15", "transformers>=4.38,<5,!=4.46.0,!=4.46.1", "torch>=2.0", "accelerate>=0.26",
+    "datasets>=2.16,<4", "sacrebleu>=2.3", "nltk>=3.8",
+]
+chem = ["rdkit>=2023.3"]
+
+[project.urls]
+Paper = "https://aclanthology.org/2025.emnlp-main.1421/"
+
+[tool.setuptools]
+packages = ["zipftok"]

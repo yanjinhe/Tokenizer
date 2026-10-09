@@ -1,0 +1,18 @@
+{
+  "_comment": "mBART encoder-decoder used for the translation experiments. vocab_size and special-token ids are filled in from the tokenizer. 6+6 layers with d_model=1024 and tied embeddings gives about 180M (2K vocab) to 322M (140K vocab) parameters (Appendix D: 177M-320M).",
+  "d_model": 1024,
+  "encoder_layers": 6,
+  "decoder_layers": 6,
+  "encoder_attention_heads": 16,
+  "decoder_attention_heads": 16,
+  "encoder_ffn_dim": 4096,
+  "decoder_ffn_dim": 4096,
+  "activation_function": "gelu",
+  "dropout": 0.1,
+  "attention_dropout": 0.1,
+  "activation_dropout": 0.0,
+  "max_position_embeddings": 1024,
+  "scale_embedding": true,
+  "init_std": 0.02,
+  "tie_word_embeddings": true
+}

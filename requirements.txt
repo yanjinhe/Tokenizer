@@ -1,0 +1,17 @@
+# core analysis
+numpy>=1.22
+scipy>=1.8
+scikit-learn>=1.1
+pandas>=1.4
+matplotlib>=3.5
+# tokenizers and models (the paper used transformers 4.38 + torch 2.0)
+tokenizers>=0.15
+transformers>=4.38,<5,!=4.46.0,!=4.46.1
+torch>=2.0
+accelerate>=0.26
+datasets>=2.16,<4
+# evaluation
+sacrebleu>=2.3
+nltk>=3.8
+# optional: MoleculeNet scaffold split
+# rdkit>=2023.3
